@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원 가입</title>
 </head>
 <body>
-
+	<div><h2>회원 가입</h2></div>
 </body>
 </html>

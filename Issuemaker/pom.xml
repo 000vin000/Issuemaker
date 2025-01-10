@@ -5,7 +5,8 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>issuemaker</name>
   <description>구인구직사이트 프로젝트</description>
-  
+  <packaging>war</packaging>
+    
   <dependencies> 
 	<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
 	<dependency>
