@@ -7,6 +7,10 @@
   <description>구인구직사이트 프로젝트</description>
   <packaging>war</packaging>
     
+    <properties>
+    	<m2eclipse.wtp.contextRoot>/</m2eclipse.wtp.contextRoot>
+    </properties>
+    
   <dependencies> 
 	<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
 	<dependency>
