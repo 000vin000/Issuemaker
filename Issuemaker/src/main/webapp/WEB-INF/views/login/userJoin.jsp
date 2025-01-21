@@ -11,9 +11,9 @@
             background-color: #f4f4f4;
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
+            align-items: top;
             margin: 0;
+            padding: 20px;
         }
         .container {
             background-color: #fff;
@@ -45,7 +45,7 @@
             border-radius: 4px;
             box-sizing: border-box;
         }
-        input[type="submit"] {
+        input[type="submit"], .btn {
             background-color: #007bff;
             color: white;
             border: none;
@@ -53,9 +53,10 @@
             border-radius: 4px;
             cursor: pointer;
             width: 100%;
+            margin-top: 10px;
             transition: background-color 0.3s;
         }
-        input[type="submit"]:hover {
+        input[type="submit"]:hover, .btn:hover {
             background-color: #0056b3;
         }
         .error-message {
@@ -95,6 +96,7 @@
             <input type="text" id="userAddress" name="userAddress" required>
         
             <input type="submit" value="가입하기">
+            <button onclick="history.back()" class="btn">취소</button>
         </form>
     </div>
 </body>

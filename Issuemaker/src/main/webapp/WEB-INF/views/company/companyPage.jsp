@@ -16,78 +16,94 @@
             margin: 0;
             padding: 0;
         }
+
         h2 {
             text-align: center;
             color: black;
             margin-bottom: 20px;
         }
-        .notice-list {
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin: 0 auto;
-            max-width: 600px;
+
+        .notice-table {
+            max-width: 600px; /* 최대 너비 설정 */
+            margin: 0 auto; /* 중앙 정렬 */
+            padding: 20px; /* 패딩 */
+            background-color: white; /* 배경색 */
+            border-radius: 8px; /* 모서리 둥글게 */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
         }
-        .notice-item {
+
+        .notice-table th, .notice-table td {
             padding: 10px;
-            border-bottom: 1px solid #e0e0e0;
-            transition: background-color 0.3s;
+            text-align: center; 
         }
-        .notice-item:last-child {
-            border-bottom: none; /* 마지막 항목의 경계선 제거 */
+
+        .notice-table th {
+            background-color: #f0f0f0; /* 헤더 배경색 */
         }
-        .notice-item:hover {
+
+        .notice-table tr:hover {
             background-color: #f0f8ff; /* 호버 시 배경색 변경 */
         }
+
         .notice-link {
             text-decoration: none;
             color: #333;
             font-size: 16px;
         }
+
         .notice-link:hover {
-            color: #007BFF; /* 호버 시 글자색 변경 */
+            color: #007BFF;
         }
+
         .submit-button {
-            display: inline-block;
-            padding: 5px 10px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 20px;
-            transition: background-color 0.3s;
+            display: block; /* 블록 요소로 설정 */
+            width: 200px; /* 버튼 너비 설정 */
+            margin: 20px auto; /* 중앙 정렬 */
+            padding: 10px; /* 패딩 */
+            background-color: #6482B9; /* 버튼 배경색 */
+            color: white; /* 버튼 텍스트 색상 */
+            border: none; /* 테두리 제거 */
+            border-radius: 5px; /* 모서리 둥글게 */
+            cursor: pointer; /* 마우스 커서 변경 */
+            text-align: center; /* 텍스트 중앙 정렬 */
+            transition: background-color 0.3s; /* 호버 애니메이션 */
         }
         .submit-button:hover {
-            background-color: #0056b3; /* 호버 시 배경색 변경 */
+            background-color: #4a6a9a; /* 호버 시 색상 변경 */
         }
-        .button-container {
-            text-align: center; /* 버튼을 중앙 정렬 */
-            margin-top: 20px; /* 위쪽 여백 추가 */
-        }
+
     </style>
 </head>
 <body>
     <form>
         <h2>나의 공고</h2>
-        <div class="notice-list">
-            <c:set var="count" value="0"/>
-            <c:forEach var="notice" items="${notice}">
-                <c:set var="count" value="${count + 1}"/>
-                <div class="notice-item">
-                    <a class="notice-link" href="/noticeDetail?noticeNo=${notice.no}">
-                        ${count} ${notice.title} ${notice.postDate} ~ ${notice.deadLine}
-                    </a>
-                </div>
-            </c:forEach>
-        </div>
+        <table class="notice-table">
+            <thead>
+                <tr>
+                    <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">번호</th>
+                    <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">제목</th>
+                    <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">게시일</th>
+                    <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">마감일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <c:set var="count" value="0"/>
+                <c:forEach var="notice" items="${notice}">
+                    <c:set var="count" value="${count + 1}"/>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 10px;">${count}</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">
+                        	<a class="notice-link" href="/noticeDetail?noticeNo=${notice.no}" style="text-decoration: none; color: black;">
+                        		${notice.title}</a></td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">${notice.postDate}</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">${notice.deadLine}</td>
+                    </tr>
+                </c:forEach>
+            </tbody>
+        </table>
     </form>
-    <div class="button-container">
-    <form action="/noticeNew">
-        <input type="submit" value="공고등록" class="submit-button">
-    </form>
-    </div>
+        <form action="/noticeNew">
+            <input type="submit" value="공고등록" class="submit-button">
+        </form>
 </body>
 </html>

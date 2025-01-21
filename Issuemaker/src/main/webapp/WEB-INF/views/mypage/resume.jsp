@@ -185,10 +185,11 @@
             <c:if test="${ currentUserId == resume.userId }">
                 <input class="delete" type="submit" name="action" value="삭제">
                 <input type="hidden" name="no" value="${ resume.no }">
+                <button onclick="window.location.href='/userPage'">뒤로가기</button>
             </c:if>
         </form>
         
-        <button onclick="window.history.back()">뒤로가기</button>
+        
     </div>
 </body>
 </html>

@@ -17,7 +17,7 @@ public class LogoutServlet extends HttpServlet {
 		cookie.setMaxAge(0);  // 쿠키 만료
 		resp.addCookie(cookie);
 		
-		resp.sendRedirect("/");  // 메인 홈으로
+		resp.sendRedirect("/index");  // 메인 홈으로
 	}
 
 	@Override

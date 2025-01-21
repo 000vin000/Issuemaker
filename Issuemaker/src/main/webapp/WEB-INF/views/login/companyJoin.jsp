@@ -14,8 +14,7 @@
             padding: 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
+            align-items: top;
         }
 
         .container {
@@ -50,8 +49,7 @@
             box-sizing: border-box;
         }
 
-        input[type="submit"],
-        button {
+        input[type="submit"], .btn {
             background-color: #007bff;
             color: white;
             border: none;
@@ -62,8 +60,7 @@
             margin-top: 10px;
         }
 
-        input[type="submit"]:hover,
-        button:hover {
+        input[type="submit"]:hover, .btn:hover {
             background-color: #0056b3;
         }
 
@@ -125,7 +122,7 @@
             <input type="text" name="comWeb" id="comWeb">
 
             <input type="submit" value="가입">
-            <button type="button">취소</button>
+            <button onclick="history.back()" class="btn">취소</button>
         </form>
     </div>
 </body>
