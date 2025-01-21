@@ -82,7 +82,7 @@
 </head>
 <body>
     <header>
-        <a href="/">
+        <a href="/index">
             <img src="${pageContext.request.contextPath}/images/logo.png" class="logo" alt="로고" />
         </a>
         <form class="search" action="search">

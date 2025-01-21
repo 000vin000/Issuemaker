@@ -169,21 +169,24 @@
         설립일 : ${company.comBirth}</p>
     </div>
 
-    <c:if test="${ currentComId == notice.comId }">
-        <div class="card">
+	<div class="card">
+		<% GetCookie co = GetCookie.getInstance();
+			request.setAttribute("currentComId", co.getCookieUserId(request)); %>
+   		<c:if test="${ currentComId == notice.comId }">
             <a href="/noticeSetting?no=${notice.no}" class="button">수정</a>
-            <button type="button" class="button" onclick="window.history.back()">취소</button>
-        </div>
-    </c:if>
-
+            <a href="/deleteNotice?no=${ notice.no }" class="button">삭제</a>
+            <a href="/companyPage" class="button">목록으로 돌아가기</a>
+    	</c:if>
+    	
+    </div>
+	
     <div class="footer">
         <%
             // 사용자 아이디 종류 확인
-            GetCookie co = GetCookie.getInstance();
             request.setAttribute("type", co.getCookieUserType(request));
             request.setAttribute("user", co.getCookieUserId(request));
         %>
-        <c:if test="${ type == 0 || empty type }">
+        <c:if test="${ type == 0 || empty user }">
             <a href="/selectResume?noticeNo=${notice.no}" class="button">지원하기</a>
         </c:if>
         <c:if test="${ check }">

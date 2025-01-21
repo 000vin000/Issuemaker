@@ -62,9 +62,9 @@
         <table style="width: 100%; border-collapse: collapse;">
             <thead>
                 <tr>
-                    <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">번호</th>
-                    <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">제목</th>
-                    <th style="border: 1px solid #ddd; padding: 10px; text-align: left;">등록일</th>
+                    <th style="border: 1px solid #ddd; padding: 10px; text-align: center;">번호</th>
+                    <th style="border: 1px solid #ddd; padding: 10px; text-align: center;">제목</th>
+                    <th style="border: 1px solid #ddd; padding: 10px; text-align: center;">등록일</th>
                 </tr>
             </thead>
             <tbody>
@@ -85,7 +85,6 @@
         </table>
     </div>
 </form>
-
     <form action="/writeResume">
         <input type="submit" value="이력서 작성" class="submit-button">
     </form>

@@ -27,7 +27,7 @@
             color: #333;
             margin-bottom: 20px;
         }
-        input[type="submit"] {
+        input[type="submit"], .btn {
             background-color: #007bff;
             color: white;
             border: none;
@@ -38,7 +38,7 @@
             margin: 10px 0;
             transition: background-color 0.3s;
         }
-        input[type="submit"]:hover {
+        input[type="submit"]:hover, .btn:hover {
             background-color: #0056b3;
         }
     </style>
@@ -52,6 +52,9 @@
         <form action="/companyJoin">
             <input type="submit" value="기업">
         </form>
+        <hr>
+        <button onclick="location.href='/index'" class="btn">홈으로 돌아가기</button>
+
     </div>
 </body>
 </html>

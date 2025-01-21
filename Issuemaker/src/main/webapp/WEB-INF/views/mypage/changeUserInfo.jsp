@@ -59,6 +59,20 @@
         input[type="submit"]:hover {
             background-color: #4a6a9a;
         }
+        .btn {
+        	background-color: #fffff;
+        	margin-top: 10px;
+            color: #6482B9;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+ 			 border: 2px solid #6482B9;
+        }
     </style>
 </head>
 <body>
@@ -88,6 +102,7 @@
             <input type="text" id="userAddress" name="userAddress" value="${ userInfo.getUserAddress() }" required>
         	<br>
             <input type="submit" value="수정하기">
+            <button type="button" class="btn" onclick="history.back()">뒤로가기</button>
         </form>
     </div>
 </body>

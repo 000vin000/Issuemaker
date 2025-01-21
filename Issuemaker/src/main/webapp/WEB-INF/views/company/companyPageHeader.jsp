@@ -64,7 +64,7 @@
 </head>
 <body>
     <header>
-        <a href="/">
+        <a href="/index">
             <img src="${pageContext.request.contextPath}/images/logo.png" alt="로고" class="logo" />
         </a>
         <nav>
