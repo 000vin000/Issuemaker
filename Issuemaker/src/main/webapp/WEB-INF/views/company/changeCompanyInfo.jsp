@@ -42,7 +42,8 @@
             border-radius: 4px; /* 모서리 둥글게 */
             box-sizing: border-box; /* 패딩과 테두리를 포함한 너비 계산 */
         }
-        input[type="submit"] {
+        input[type="submit"],
+        button.cancel-button {
             background-color: #007bff; /* 버튼 배경색 */
             color: white; /* 버튼 글자색 */
             border: none; /* 테두리 제거 */
@@ -52,7 +53,8 @@
             font-size: 16px; /* 글자 크기 */
             width: 100%; /* 전체 너비 사용 */
         }
-        input[type="submit"]:hover {
+        input[type="submit"]:hover,
+        button.cancel-button:hover {
             background-color: #0056b3; /* 마우스 오버 시 배경색 변경 */
         }
         .error-message {
@@ -113,6 +115,9 @@
         
         <div>
             <input type="submit" value="수정하기">
+        </div>
+        <div>
+            <button type="button" class="cancel-button" onclick="window.history.back()">취소하기</button>
         </div>
     </form>
 </body>
